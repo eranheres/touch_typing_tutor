@@ -1,0 +1,17 @@
+
+    sequenceDiagram
+        participant M as Main
+        participant U as User
+        participant S as Session
+        participant St as Statistics
+        M->>U: create user
+        M->>S: create session
+        S->>U: load progress
+        S->>S: generate text
+        S->>S: get input
+        S->>S: end session
+        S->>U: save progress
+        M->>St: create statistics
+        St->>St: collect data
+        St->>St: display data
+    

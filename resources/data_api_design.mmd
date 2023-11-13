@@ -1,0 +1,29 @@
+
+    classDiagram
+        class User{
+            +str username
+            +str language
+            +dict progress
+            +__init__(username: str, language: str)
+            +load_progress()
+            +save_progress()
+        }
+        class Session{
+            +str text
+            +str input
+            +User user
+            +__init__(user: User)
+            +generate_text(language: str)
+            +get_input()
+            +end_session()
+        }
+        class Statistics{
+            +User user
+            +dict data
+            +__init__(user: User)
+            +collect_data(session: Session)
+            +display_data()
+        }
+        User "1" -- "1" Session: has
+        User "1" -- "1" Statistics: has
+    
